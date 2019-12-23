@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+/*
+// Chamando funções
 Route::get('/contato/{id?}', function ($id = null) {
     return "contato id = ".$id;
 });
@@ -28,3 +29,9 @@ Route::post('/contato', function () {
 Route::put('/contato', function () {
     return "contato put";
 });
+*/
+
+// Chamando Controllers
+Route::get('/contato/{id?}', ['uses' => 'ContatoController@index']);
+Route::post('/contato', ['uses' => 'ContatoController@criar']);
+Route::put('/contato', ['uses' => 'ContatoController@editar']);
