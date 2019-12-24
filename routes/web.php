@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::get('/',['as' => "site.home","uses" => "Site\HomeController@index"]);
+
 
 /*
 // Chamando funções
