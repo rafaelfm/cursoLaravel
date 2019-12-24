@@ -35,3 +35,16 @@ Route::put('/contato', function () {
 Route::get('/contato/{id?}', ['uses' => 'ContatoController@index']);
 Route::post('/contato', ['uses' => 'ContatoController@criar']);
 Route::put('/contato', ['uses' => 'ContatoController@editar']);
+
+//tela
+Route::get('/admin/cursos',['as' => "admin.cursos","uses" => "Admin\CursoController@index"]);
+// tela
+Route::get('/admin/cursos.adicionar',['as' => "admin.cursos.adicionar","uses" => "Admin\CursoController@adicionar"]);
+//acao
+Route::post('/admin/cursos.salvar',['as' => "admin.cursos.salvar","uses" => "Admin\CursoController@salvar"]);
+//tela
+Route::get('/admin/cursos.editar/{id}',['as' => "admin.cursos.editar","uses" => "Admin\CursoController@editar"]);
+//acao
+Route::put('/admin/cursos.atualizar/{id}',['as' => "admin.cursos.atualizar","uses" => "Admin\CursoController@atualizar"]);
+// tela
+Route::get('/admin/cursos.deletar/{id}',['as' => "admin.cursos.deletar","uses" => "Admin\CursoController@deletar"]);
