@@ -3,23 +3,33 @@
 @section("titulo","Cursos")
 
 @section('conteudo')
-    <h3> Lista de cursos </h3>
-    <div class="row">
-        @foreach($cursos as $curso)
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img width="60" src="{{asset($curso->imagem)}}">
-                        <span class="card-title">{{$curso->titulo}}</span>
-                    </div>
-                    <div class="card-content">
-                        <p>{{$curso->descricao}}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
+    <div class="container">
+        <h3 class="center">Lista de cursos</h3>
+        <div class="row">
+            @foreach($cursos as $curso)
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{asset($curso->imagem)}}">
+                        </div>
+                        <div class="card-content">
+                            <h4>{{$curso->titulo}}</h4>
+                            <p>{{$curso->descricao}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Ver mais...</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
+        <div class="row" align="center">
+            {{$cursos->links()}}
+        </div>
+
     </div>
+
+
+
+
 @endsection
